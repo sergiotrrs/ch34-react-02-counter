@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Button } from "../button/Button";
 
 const CounterApp = () => {
 
@@ -19,15 +20,9 @@ const CounterApp = () => {
     <div className="counter-container">
       <h2 id="counter"> {counter} </h2>
       <div id="buttons">
-        <button onClick={handleIncrement} id="add" type="button">
-          Add
-        </button>
-        <button onClick={handleDecrement} id="less" type="button">
-          Less
-        </button>
-        <button onClick={ ()=>setCounter(0)  } id="restart" type="button">
-          Restart
-        </button>
+        <Button onClick={handleIncrement} >Add</Button>
+        <Button onClick={handleDecrement} >Less</Button>        
+        <button onClick={ ()=>setCounter(0) }> Restart</button>
       </div>
     </div>
   );
