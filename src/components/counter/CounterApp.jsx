@@ -1,9 +1,24 @@
+import { useState } from "react";
+
 const CounterApp = () => {
+  const [render, setRender] = useState(1);
+  console.log(`N. de renderización: ${render}`);
+
+  //Hook UseState
+  const [counter, setCounter] = useState(0);
+
+  const handleIncrement = () => {
+    console.log("Has pulsado el botón de incrementar");
+    setCounter(counter + 1); // 0 + 1 = 1
+    setRender(render + 1);
+    console.log(counter); // 0
+  };
+
   const counterComponent = (
     <div className="counter-container">
-      <h2 id="counter">0</h2>
+      <h2 id="counter"> {counter} </h2>
       <div id="buttons">
-        <button id="add" type="button">
+        <button onClick={handleIncrement} id="add" type="button">
           Add
         </button>
         <button id="less" type="button">
