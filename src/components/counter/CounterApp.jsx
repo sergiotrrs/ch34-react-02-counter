@@ -1,18 +1,19 @@
 import { useState } from "react";
 
 const CounterApp = () => {
-  const [render, setRender] = useState(1);
-  console.log(`N. de renderización: ${render}`);
 
   //Hook UseState
   const [counter, setCounter] = useState(0);
 
   const handleIncrement = () => {
-    console.log("Has pulsado el botón de incrementar");
-    setCounter(counter + 1); // 0 + 1 = 1
-    setRender(render + 1);
-    console.log(counter); // 0
+    setCounter(counter + 1); 
   };
+
+  const handleDecrement = () => {
+    setCounter( counter - 1);
+  }
+
+  // Agregar la funcionalidad para el botón decrement y reset
 
   const counterComponent = (
     <div className="counter-container">
@@ -21,10 +22,10 @@ const CounterApp = () => {
         <button onClick={handleIncrement} id="add" type="button">
           Add
         </button>
-        <button id="less" type="button">
+        <button onClick={handleDecrement} id="less" type="button">
           Less
         </button>
-        <button id="restart" type="button">
+        <button onClick={ ()=>setCounter(0)  } id="restart" type="button">
           Restart
         </button>
       </div>
