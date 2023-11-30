@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ButtonGroup, Button } from "@mui/material";
+import { ButtonGroup, Button, Typography, Box } from "@mui/material";
 
 const CounterApp = () => {
   //Hook UseState
@@ -16,8 +16,14 @@ const CounterApp = () => {
   // Agregar la funcionalidad para el botón decrement y reset
 
   const counterComponent = (
-    <div className="counter-container">
-      <h2 id="counter"> {counter} </h2>
+    <Box p={2} m={2} borderRadius={16} bgcolor={ {xs:"primary.main", md:"success.main"} } >
+      {/* <h2 id="counter"> {counter} </h2> */}
+      <Typography
+        sx={{ fontSize: { xs: "2rem", sm: "4rem", md: "6rem", lg: "8rem" } }}
+        component="p"
+      >
+        {counter}
+      </Typography>
       <div id="buttons">
         <ButtonGroup
           variant="contained"
@@ -28,7 +34,7 @@ const CounterApp = () => {
           <Button onClick={() => setCounter(0)}>Restart</Button>
         </ButtonGroup>
       </div>
-    </div>
+    </Box>
   );
 
   return counterComponent;
