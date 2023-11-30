@@ -1,4 +1,6 @@
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
+import { AboutUs } from "./pages/about-us/AboutUs";
 import { Footer } from "./pages/footer/Footer";
 import Home from "./pages/home/Home";
 import { NavBar } from "./pages/navbar/NavBar";
@@ -8,11 +10,21 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      <Home />
-      <Products />
+       <Routes>
+        <Route index element={ <Home />} />
+        <Route path="products" element={ <Products />} />
+        <Route path="about-us" element={ <AboutUs />} />
+       </Routes>
       <Footer />
     </div>
   );
 }
 
 export default App;
+
+/*
+ Routes: Define varias rutas dentro de la aplicación
+ Route: Asocia un componente a una ruta específica
+
+
+*/
