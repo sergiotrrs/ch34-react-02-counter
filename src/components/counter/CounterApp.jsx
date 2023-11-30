@@ -1,18 +1,17 @@
 import { useState } from "react";
-import { Button } from "../button/Button";
+import { ButtonGroup, Button } from "@mui/material";
 
 const CounterApp = () => {
-
   //Hook UseState
   const [counter, setCounter] = useState(0);
 
   const handleIncrement = () => {
-    setCounter(counter + 1); 
+    setCounter(counter + 1);
   };
 
   const handleDecrement = () => {
-    setCounter( counter - 1);
-  }
+    setCounter(counter - 1);
+  };
 
   // Agregar la funcionalidad para el botón decrement y reset
 
@@ -20,9 +19,14 @@ const CounterApp = () => {
     <div className="counter-container">
       <h2 id="counter"> {counter} </h2>
       <div id="buttons">
-        <Button onClick={handleIncrement} >Add</Button>
-        <Button onClick={handleDecrement} >Less</Button>        
-        <button onClick={ ()=>setCounter(0) }> Restart</button>
+        <ButtonGroup
+          variant="contained"
+          aria-label="outlined primary button group"
+        >
+          <Button onClick={handleIncrement}>Add</Button>
+          <Button onClick={handleDecrement}>Less</Button>
+          <Button onClick={() => setCounter(0)}>Restart</Button>
+        </ButtonGroup>
       </div>
     </div>
   );

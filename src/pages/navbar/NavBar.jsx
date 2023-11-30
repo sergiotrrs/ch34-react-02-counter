@@ -11,6 +11,7 @@ export const NavBar = () => {
           </li>
           <li>
             <Link to="/about-us">AboutUs</Link>
+            {/* <a href="/about-us"  > About Us  </a> */}
           </li>
           <li>
             <Link to="/products">Products</Link>
